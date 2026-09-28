@@ -12,9 +12,9 @@ con ellos. La narrativa describe aportaciones, no cargos.
 
 ### Emmanuel Isaías Guízar Bayardo
 
-*[COMPLETAR: roles CRediT, por ejemplo Conceptualization · Software · Writing – original draft]*
+*Conceptualization · Software · Writing – original draft*
 
-[COMPLETAR: qué hizo, en una o dos frases.]
+Diseñó la arquitectura de la biblioteca, implementó las reglas de visualización y automatizó las pruebas de accesibilidad.
 
 <!-- Por cada persona más: una sección "### Nombres Apellidos", sus roles en
      cursiva y su narrativa. Si además es autora, va en CITATION.cff con el mismo

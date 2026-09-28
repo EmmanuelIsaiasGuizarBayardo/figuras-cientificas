@@ -5,22 +5,49 @@
 #    uv export --format requirements.txt --no-hashes --all-extras --no-emit-project
 cfgv==3.5.0
     # via pre-commit
+cmcrameri==1.10
+    # via figuras-cientificas
 colorama==0.4.6 ; sys_platform == 'win32'
     # via pytest
+colorspacious==1.1.2
+    # via figuras-cientificas
+contourpy==1.4.0
+    # via matplotlib
+cycler==0.12.1
+    # via matplotlib
 distlib==0.4.3
     # via virtualenv
 filelock==4.0.6
     # via
     #   python-discovery
     #   virtualenv
+fonttools==4.66.0
+    # via matplotlib
 identify==2.6.20
     # via pre-commit
 iniconfig==2.3.0
     # via pytest
+kiwisolver==1.5.1
+    # via matplotlib
+matplotlib==3.11.2
+    # via
+    #   cmcrameri
+    #   figuras-cientificas
 nodeenv==1.11.0
     # via pre-commit
+numpy==2.5.3
+    # via
+    #   cmcrameri
+    #   colorspacious
+    #   contourpy
+    #   matplotlib
 packaging==26.3
-    # via pytest
+    # via
+    #   cmcrameri
+    #   matplotlib
+    #   pytest
+pillow==12.3.0
+    # via matplotlib
 platformdirs==4.12.1
     # via virtualenv
 pluggy==1.6.0
@@ -28,11 +55,17 @@ pluggy==1.6.0
 pre-commit==4.6.2
 pygments==2.21.0
     # via pytest
+pyparsing==3.3.3
+    # via matplotlib
 pytest==9.1.1
+python-dateutil==2.9.0.post0
+    # via matplotlib
 python-discovery==1.6.1
     # via virtualenv
 pyyaml==6.0.3
     # via pre-commit
 ruff==0.16.9
+six==1.17.0
+    # via python-dateutil
 virtualenv==21.13.0
     # via pre-commit

@@ -1,0 +1,36 @@
+# Estilo de presentacion de figuras-cientificas: legible desde el fondo de un salon.
+# Se carga con figuras_cientificas.usar_estilo("presentacion").
+
+font.family:        sans-serif
+font.sans-serif:    Arial, Helvetica, DejaVu Sans
+font.size:          14
+axes.titlesize:     16
+axes.labelsize:     14
+figure.titlesize:   16
+xtick.labelsize:    12
+ytick.labelsize:    12
+legend.fontsize:    12
+legend.frameon:     False
+
+axes.linewidth:     1.0
+axes.spines.top:    False
+axes.spines.right:  False
+axes.grid:          False
+xtick.major.width:  1.0
+ytick.major.width:  1.0
+xtick.major.size:   5
+ytick.major.size:   5
+lines.linewidth:    2.0
+lines.markersize:   7
+patch.linewidth:    1.0
+errorbar.capsize:   4
+
+image.cmap:         cmc.batlow
+figure.facecolor:   white
+axes.facecolor:     white
+figure.dpi:         100
+figure.constrained_layout.use: True
+savefig.dpi:        200
+savefig.format:     png
+pdf.fonttype:       42
+svg.fonttype:       none

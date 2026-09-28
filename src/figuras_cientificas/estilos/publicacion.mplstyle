@@ -1,0 +1,40 @@
+# Estilo de publicacion de figuras-cientificas, segun la guia de Nature: texto de
+# 5 a 7 pt en una sola tipografia sans-serif, texto editable en el PDF. Las letras
+# de panel (8 pt) las pone letra_panel. El ciclo de color lo aporta petroff6.
+# Sin savefig.bbox a proposito: "tight" cambiaria el ancho de la figura.
+# Se carga con figuras_cientificas.usar_estilo("publicacion").
+
+font.family:        sans-serif
+font.sans-serif:    Arial, Helvetica, DejaVu Sans
+font.size:          7
+axes.titlesize:     7
+axes.labelsize:     7
+figure.titlesize:   7
+xtick.labelsize:    6
+ytick.labelsize:    6
+legend.fontsize:    6
+legend.frameon:     False
+
+axes.linewidth:     0.5
+axes.spines.top:    False
+axes.spines.right:  False
+axes.grid:          False
+xtick.major.width:  0.5
+ytick.major.width:  0.5
+xtick.major.size:   2.5
+ytick.major.size:   2.5
+lines.linewidth:    1.0
+lines.markersize:   3
+patch.linewidth:    0.5
+errorbar.capsize:   2
+
+image.cmap:         cmc.batlow
+figure.facecolor:   white
+axes.facecolor:     white
+figure.dpi:         150
+figure.constrained_layout.use: True
+savefig.dpi:        600
+savefig.format:     pdf
+pdf.fonttype:       42
+ps.fonttype:        42
+svg.fonttype:       none
