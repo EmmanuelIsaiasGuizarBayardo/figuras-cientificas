@@ -9,7 +9,7 @@ la ve una persona con daltonismo. Las reglas completas, con referencias, están 
 ## Usar en una investigación
 
 ```
-uv add git+https://github.com/EmmanuelIsaiasGuizarBayardo/figuras-cientificas --tag v0.1.0
+uv add git+https://github.com/EmmanuelIsaiasGuizarBayardo/figuras-cientificas --tag v0.1.1
 uv run python -m figuras_cientificas regla
 ```
 
