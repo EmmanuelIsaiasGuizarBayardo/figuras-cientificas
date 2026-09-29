@@ -9,14 +9,23 @@ la ve una persona con daltonismo. Las reglas completas, con referencias, están 
 ## Usar en una investigación
 
 ```
-uv add git+https://github.com/EmmanuelIsaiasGuizarBayardo/figuras-cientificas --tag v0.1.2
+uv add git+https://github.com/EmmanuelIsaiasGuizarBayardo/figuras-cientificas
 uv run python -m figuras_cientificas regla
 ```
 
-La primera línea la agrega como dependencia, y `uv.lock` fija la versión exacta
-que usó cada investigación. La segunda escribe `.agents/rules/visualizacion.md`,
-para que Antigravity aplique las reglas en ese proyecto. Para actualizar, cambia
-la etiqueta en `uv add` y vuelve a correr `regla`.
+La primera línea la agrega como dependencia, y `uv.lock` fija el commit exacto que
+usó cada investigación: eso es lo que la hace reproducible. La segunda escribe
+`.agents/rules/visualizacion.md`, para que Antigravity aplique las reglas en ese
+proyecto; su encabezado dice qué versión las generó. Para actualizar:
+
+```
+uv lock --upgrade-package figuras-cientificas
+uv sync
+uv run python -m figuras_cientificas regla
+```
+
+Un proyecto que la agregó con `--tag` queda fijo en esa etiqueta; para seguir la
+versión más reciente, se vuelve a agregar sin `--tag`.
 
 ```python
 import matplotlib.pyplot as plt
@@ -41,6 +50,20 @@ fc.revisar_figura(fig).savefig("revision.png")  # daltonismo simulado y luminosi
 
 `ejemplos/demo.py` aplica todas las reglas en una figura completa:
 `uv run python ejemplos/demo.py` la guarda en `results/ejemplos/`.
+
+## Publicar una versión
+
+Con los cambios hechos, un solo comando sube el número de versión, actualiza la
+cita, regenera `requirements.txt`, corre las pruebas, hace el commit, etiqueta y
+sube. Se detiene en el primer paso que falle, siempre antes de etiquetar, y se niega
+a reutilizar una etiqueta existente:
+
+```
+uv run python tools/publicar.py 0.1.4 "Qué cambia en esta versión"
+```
+
+`.github/workflows/etiqueta.yml` verifica en GitHub que cada etiqueta coincida con
+la versión del paquete, por si alguna vez se etiqueta a mano.
 
 ## Qué verifican las pruebas
 

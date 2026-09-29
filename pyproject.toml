@@ -1,6 +1,6 @@
 [project]
 name = "figuras-cientificas"
-version = "0.1.0"
+version = "0.1.3"
 description = "Paletas, estilos y verificación de accesibilidad para figuras científicas."
 readme = "README.md"
 requires-python = ">=3.12"
