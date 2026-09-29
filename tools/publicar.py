@@ -33,13 +33,25 @@ def etiqueta_existe(etiqueta: str) -> bool:
 
 
 def commit(mensaje: str) -> None:
-    """Commit con los hooks; si uno corrige archivos, se agregan y se reintenta una vez."""
+    """Commit con los hooks de pre-commit.
+
+    Si no hay nada que commitear, el commit con esta versión ya existe, por ejemplo
+    tras una corrida interrumpida, y se sigue a la etiqueta. Si un hook corrige
+    archivos, se agregan y se reintenta una vez; si falla sin corregir, se detiene.
+    """
     correr("git", "add", "-A")
-    if subprocess.run(["git", "commit", "-m", mensaje], cwd=RAIZ, check=False).returncode == 0:
+    sin_cambios = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=RAIZ, check=False)
+    if sin_cambios.returncode == 0:
+        print("\nNo hay cambios que commitear: el commit con esta versión ya existe.", flush=True)
         return
+    orden = ["git", "commit", "-m", mensaje]
+    if subprocess.run(orden, cwd=RAIZ, check=False).returncode == 0:
+        return
+    if subprocess.run(["git", "diff", "--quiet"], cwd=RAIZ, check=False).returncode == 0:
+        raise subprocess.CalledProcessError(1, orden)  # un hook falló sin corregir nada
     print("\nUn hook corrigió archivos; se agregan y se reintenta el commit.", flush=True)
     correr("git", "add", "-A")
-    correr("git", "commit", "-m", mensaje)
+    correr(*orden)
 
 
 def main(argumentos: list[str]) -> int:
