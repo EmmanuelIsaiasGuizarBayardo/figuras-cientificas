@@ -137,6 +137,14 @@ Si se usó Okabe-Ito:
 > Categorical colours follow the Okabe-Ito palette (Okabe & Ito, 2008; Wong, 2011),
 > designed to be distinguishable for viewers with colour-vision deficiency.
 
+## Perfiles por venue
+
+Cuando un congreso o una revista impone requisitos propios, se aplica un perfil encima
+de estas reglas: primero las instrucciones del venue, luego el perfil y al final estas
+reglas. Los perfiles vienen con el paquete y se instalan junto a esta regla; el de
+Springer LNCS, usado en el CNIB, con
+`uv run python -m figuras_cientificas regla --perfil cnib_lncs`.
+
 ## Referencias
 
 Combrisson, E., & Jerbi, K. (2015). Exceeding chance level by chance: The caveat of

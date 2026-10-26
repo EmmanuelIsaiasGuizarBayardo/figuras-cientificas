@@ -9,7 +9,13 @@ regla para elegirlas (``paletas``), el tamaño y el estilo de publicación
 
 from importlib.metadata import version
 
-from figuras_cientificas.diseno import ANCHOS_MM, letra_panel, tamano_figura, usar_estilo
+from figuras_cientificas.diseno import (
+    ANCHOS_MM,
+    exportar_tiff,
+    letra_panel,
+    tamano_figura,
+    usar_estilo,
+)
 from figuras_cientificas.paletas import (
     categorica,
     ciclico,
@@ -37,6 +43,7 @@ __all__ = [
     "contraste",
     "divergente",
     "estilo_serie",
+    "exportar_tiff",
     "extension",
     "letra_panel",
     "luminosidad",

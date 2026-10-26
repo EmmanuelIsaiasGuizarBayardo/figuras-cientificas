@@ -24,7 +24,11 @@ uv sync
 uv run python -m figuras_cientificas regla
 ```
 
-Un proyecto que la agregó con `--tag` queda fijo en esa etiqueta; para seguir la
+Si el trabajo va a un venue con requisitos propios, se instala también su perfil, por
+ejemplo `uv run python -m figuras_cientificas regla --perfil cnib_lncs` para Springer
+LNCS. Las guías técnicas, como la de topografías con MNE, se consultan con
+`uv run python -m figuras_cientificas guia topomaps_mne`. Un proyecto que la agregó con
+`--tag` queda fijo en esa etiqueta; para seguir la
 versión más reciente, se vuelve a agregar sin `--tag`.
 
 ```python
@@ -45,6 +49,7 @@ for i, erp in enumerate(erps):
 for eje, letra in zip((a, b), "ab", strict=True):
     fc.letra_panel(eje, letra)
 fig.savefig("figura.pdf")  # sin bbox_inches="tight": conserva los 183 mm
+fc.exportar_tiff(fig, "Figure1.tif")  # cuando el venue pide TIFF
 fc.revisar_figura(fig).savefig("revision.png")  # daltonismo simulado y luminosidad
 ```
 
@@ -77,11 +82,14 @@ una actualización de matplotlib o de cmcrameri la rompe:
   protanopia y tritanopia simuladas; los cuatro primeros de Okabe-Ito tienen
   contraste de al menos 3:1 contra blanco.
 - Un PDF de una columna mide 89 mm, y el texto queda editable.
+- Un TIFF exportado es RGB sin alfa, LZW y de 300 dpi, con el ancho diseñado.
+- Todo archivo que un perfil por venue menciona viene con el paquete.
 
 ## Estructura
 
 ```
-src/figuras_cientificas/   paletas.py, diseno.py, verificacion.py, estilos/ y las reglas.
+src/figuras_cientificas/   paletas.py, diseno.py, verificacion.py, estilos/ y las reglas;
+                           perfiles/ por venue y guias/ tecnicas, como topografias con MNE.
 tests/                     Pruebas de las propiedades medidas.
 ejemplos/                  Figura de demostración.
 tools/                     Utilidades del repositorio.

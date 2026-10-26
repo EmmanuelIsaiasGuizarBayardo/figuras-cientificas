@@ -146,12 +146,13 @@ wheels = [
 
 [[package]]
 name = "figuras-cientificas"
-version = "0.1.4"
+version = "0.2.0"
 source = { editable = "." }
 dependencies = [
     { name = "cmcrameri" },
     { name = "colorspacious" },
     { name = "matplotlib" },
+    { name = "pillow" },
 ]
 
 [package.dev-dependencies]
@@ -167,6 +168,7 @@ requires-dist = [
     { name = "cmcrameri", specifier = ">=1.10" },
     { name = "colorspacious", specifier = ">=1.1.2" },
     { name = "matplotlib", specifier = ">=3.11" },
+    { name = "pillow", specifier = ">=10" },
 ]
 
 [package.metadata.requires-dev]

@@ -47,7 +47,9 @@ packaging==26.3
     #   matplotlib
     #   pytest
 pillow==12.3.0
-    # via matplotlib
+    # via
+    #   figuras-cientificas
+    #   matplotlib
 platformdirs==4.12.1
     # via virtualenv
 pluggy==1.6.0

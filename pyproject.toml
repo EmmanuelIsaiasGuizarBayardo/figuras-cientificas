@@ -1,6 +1,6 @@
 [project]
 name = "figuras-cientificas"
-version = "0.1.4"
+version = "0.2.0"
 description = "Paletas, estilos y verificación de accesibilidad para figuras científicas."
 readme = "README.md"
 requires-python = ">=3.12"
@@ -10,6 +10,7 @@ dependencies = [
     "cmcrameri>=1.10",
     "colorspacious>=1.1.2",
     "matplotlib>=3.11",
+    "pillow>=10",
 ]
 
 [dependency-groups]
